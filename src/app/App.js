@@ -14,11 +14,11 @@ const renderEmojiDocumentation = (emojisArray, emojiSize) => {
       nameUrl = '',
     } = emojisArray[e];
     theEmojis.push(
-      <button key={`wtfoo-emoji-docs-${id}`} className="wtfoo-emoji-docs__item">
-        <div className="wtfoo-emoji-docs__item__emoji">
+      <button key={`react-emojis-docs-${id}`} className="react-emojis-docs__item">
+        <div className="react-emojis-docs__item__emoji">
           <Emoji emoji={nameUrl} size={emojiSize}/>
         </div>
-        <div className="wtfoo-emoji-docs__item__name">
+        <div className="react-emojis-docs__item__name">
           {nameUrl}
         </div>
       </button>
@@ -30,7 +30,7 @@ const renderEmojiDocumentation = (emojisArray, emojiSize) => {
 const App = () => {
   return (
     <div className="app">
-        <div className="wtfoo-emoji-docs">
+        <div className="react-emojis-docs">
           {renderEmojiDocumentation(emojis)}
         </div>
     </div>

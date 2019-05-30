@@ -34,11 +34,11 @@ const renderEmoji = (emojiName, emojiSize) => {
     if (emojiName === nameUrl) {
       theEmoji.push(
         <span
-          key={`wtffoo-emoji-${id}`}
+          key={`react-emojis-${id}`}
           role="img"
           aria-label={name}
           style={styles}
-          className="wtfoo-emoji"
+          className="react-emojis"
         >
           {emoji}
         </span>
@@ -48,7 +48,7 @@ const renderEmoji = (emojiName, emojiSize) => {
   return (
     isEmptyArray(theEmoji)
     ?
-    console.log(`[Emoji]: '${emojiName}' is not supported. Maybe the name was misspelled?`)
+    console.log(`[react-emojis]: '${emojiName}' is not supported. Maybe the name was misspelled?`)
     :
     theEmoji
   )
