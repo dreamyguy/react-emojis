@@ -17,6 +17,12 @@ Use **react-emojis** to output the recommended markup for accessible emojis:
 <span role="img" aria-label="woman dancing" class="react-emojis" style="line-height: 1;">💃</span>
 ```
 
+## Install as a 'npm' package
+
+**react-emojis** is also available as a package on `npm` and can be installed as a depedency with:
+
+    npm i react-emojis --save
+
 More documentation coming soon!
 
 ## Development
