@@ -1,7 +1,27 @@
 {
   "name": "react-emojis",
   "version": "0.1.1",
-  "private": true,
+  "private": false,
+  "description": "Render all current emojis with proper accessibility markup, on any size",
+  "keywords": [
+    "emoji",
+    "emojis",
+    "react emojis",
+    "emojis for react",
+    "emojis in react"
+  ],
+  "homepage": "https://github.com/dreamyguy/react-emojis",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dreamyguy/react-emojis"
+  },
+  "author": {
+    "name": "Wallace Sidhrée",
+    "email": "i@dreamyguy.com",
+    "url": "http://sidhree.com/"
+  },
+  "copyright": "Copyright (c) Wallace Sidhrée - All rights reserved.",
+  "license": "MIT",
   "dependencies": {
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
