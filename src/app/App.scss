@@ -1,6 +1,25 @@
 .app {
   color: black;
 }
+.header {
+  width: 100%;
+  &__content {
+    box-sizing: border-box;
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    h1 {
+      margin-top: 0;
+    }
+    h2 {
+      font-size: 18px;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
 .react-emojis-docs {
   display: flex;
   align-items: stretch;
