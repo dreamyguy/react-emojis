@@ -10,7 +10,7 @@
     "emojis for react",
     "emojis in react"
   ],
-  "homepage": "https://github.com/dreamyguy/react-emojis",
+  "homepage": "https://dreamyguy.github.io/react-emojis/",
   "repository": {
     "type": "git",
     "url": "https://github.com/dreamyguy/react-emojis"
@@ -23,6 +23,7 @@
   "copyright": "Copyright (c) Wallace Sidhrée - All rights reserved.",
   "license": "MIT",
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -32,7 +33,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
