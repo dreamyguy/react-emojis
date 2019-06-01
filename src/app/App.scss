@@ -9,6 +9,10 @@
     max-width: 700px;
     margin: 0 auto;
     text-align: center;
+    h1,
+    h2 {
+      margin: 15px 0;
+    }
     h1 {
       margin-top: 0;
     }
@@ -23,4 +27,24 @@
 .dropdown-wrapper {
   max-width: 300px;
   margin: 0 auto;
+}
+.btn__view-mode {
+  // Reset button styles
+  background-color: lighten(lightgray, 10%);
+  border-radius: 0;
+  border: none;
+  border-image-width: 0;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  text-align: center;
+  // Carry on
+  padding: 10px 20px;
+  font-size: 16px;
+  @media (min-width: 980px) {
+    font-size: 18px;
+  }
+  font-weight: 500;
+  color: black;
+  text-shadow: 2px 2px 1px white;
 }

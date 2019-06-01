@@ -33,9 +33,37 @@ class App extends Component {
       searchString: '',
       copyMode: 'emoji',
       selectedCopyModeIndex: 0,
+      max: false
     }
   }
+  toggleViewMode () {
+    const { max } = this.state;
+    this.setState({
+      max: !max
+    })
+  }
+  renderViewModeButton () {
+    const { max } = this.state;
+    return (
+      <button
+        className="btn__view-mode"
+        onClick={() => {
+          this.toggleViewMode()
+        }}
+      >
+        {max
+          ?
+          'View Comfortable Mode'
+          :
+          'View Condensed Mode'
+        }
+      </button>
+    )
+  }
   renderEmojiDocumentation (emojisArray, emojiSize) {
+    const {
+      max,
+    } = this.state;
     const theEmojis = [];
     for (let e in emojisArray) {
       const {
@@ -53,6 +81,7 @@ class App extends Component {
             emojiObj={emojisArray[e]}
             size={emojiSize}
             copyMode={copyMode}
+            showMax={max}
           />
         )
       }
@@ -61,19 +90,18 @@ class App extends Component {
   }
   render () {
     const {
+      max,
       searchString,
       selectedCopyModeIndex,
     } = this.state;
     return (
-      <div className="app">
+      <div className={`app${max ? ' max' : ''}`}>
         <GithubCorner href="https://github.com/dreamyguy/react-emojis"/>
         <div className="react-emojis-docs">
           <div className="header">
             <div className="header__content">
-              <h1>react-emojis</h1>
-              <Emoji emoji="rocket"/>
-              <Emoji emoji="hamster"/>
-              <Emoji emoji="party-popper"/>
+              <h1><Emoji emoji="unicorn"/>&nbsp;&nbsp;react-emojis&nbsp;&nbsp;<Emoji emoji="party-popper"/></h1>
+              {this.renderViewModeButton()}
               <h2>Render scalable emojis with proper accessibility markup</h2>
               <Search
                 placeholder="Filter emoji list"

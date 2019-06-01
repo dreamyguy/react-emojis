@@ -3,6 +3,7 @@
   align-items: stretch;
   flex-wrap: wrap;
   &__item {
+    position: relative;
     // Reset button styles
     background-color: lighten(lightgray, 10%);
     border-radius: 0;
@@ -34,6 +35,47 @@
       width: 18.7%;
       margin: 0.6%;
     }
+    .max & {
+      padding: 1% 0 0 0;
+      margin: 1%;
+      width: 23%;
+
+      @media (min-width: 390px) and (max-width: 520px) {
+        width: 18%;
+      }
+      @media (min-width: 521px) and (max-width: 640px) {
+        width: 15%;
+        margin: 0.8%;
+      }
+      @media (min-width: 641px) and (max-width: 768px) {
+        width: 11%;
+        margin: 0.7%;
+      }
+      @media (min-width: 769px) and (max-width: 950px) {
+        width: 9.7%;
+        margin: 0.7%;
+      }
+      @media (min-width: 951px) and (max-width: 1000px) {
+        padding: 0.7% 0 0 0;
+        width: 8.8%;
+        margin: 0.6%;
+      }
+      @media (min-width: 1001px) and (max-width: 1100px) {
+        padding: 0.5% 0 0 0;
+        width: 7.1%;
+        margin: 0.6%;
+      }
+      @media (min-width: 1101px) and (max-width: 1400px) {
+        padding: 0.5% 0 0 0;
+        width: 6.1%;
+        margin: 0.5%;
+      }
+      @media (min-width: 1401px) {
+        padding: 0.4% 0 0 0;
+        width: 5.6%;
+        margin: 0.3%;
+      }
+    }
     &:hover {
       background-color: lightgray;
       cursor: pointer;
@@ -61,6 +103,17 @@
         color: white;
         text-shadow: 2px 2px 1px black;
       }
+    }
+    .copied-max { // Only shows when 'max' is active
+      position: absolute;
+      font-size: 16px;
+      font-weight: 500;
+      color: white;
+      text-shadow: 2px 2px 1px black;
+      padding: 2px 5px 5px;
+      background-color: green;
+      top: 33%;
+      z-index: 2;
     }
   }
 }

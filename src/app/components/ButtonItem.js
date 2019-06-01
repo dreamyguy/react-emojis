@@ -61,6 +61,7 @@ class ButtonItem extends Component {
         nameUrl = '',
       } = {},
       size = '',
+      showMax = false,
     } = this.props;
     const {
       copiedToClipboardStatus,
@@ -83,12 +84,17 @@ class ButtonItem extends Component {
         }}
         disabled={copiedToClipboardStatus}
       >
+        {showMax && copiedToClipboardStatus &&
+          <span className="copied-max">copied!</span>
+        }
         <div className="react-emojis-docs__item__emoji">
           <Emoji emoji={nameUrl} size={size}/>
         </div>
-        <div className="react-emojis-docs__item__name">
-          {copiedToClipboardStatus ? 'copied!' : nameUrl}
-        </div>
+        {!showMax &&
+          <div className="react-emojis-docs__item__name">
+            {copiedToClipboardStatus ? 'copied!' : nameUrl}
+          </div>
+        }
       </button>
     )
   }
@@ -98,6 +104,7 @@ Emoji.propTypes = {
   classes: PropTypes.string,
   emojiObj: PropTypes.object,
   size: PropTypes.string,
+  showMax: PropTypes.bool,
 };
 
 export default ButtonItem;
