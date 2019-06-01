@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import emojis from './components/EmojiData';
 
 // Import components
+import ButtonItem from './components/ButtonItem';
 import Emoji from './components/Emoji';
 import Search from './components/Search';
 
@@ -26,20 +27,20 @@ class App extends Component {
       const {
         id = '',
         nameUrl = '',
+        emoji = '',
       } = emojisArray[e];
       const {
         searchString
       } = this.state;
       if (containsString(nameUrl, searchString)) {
         theEmojis.push(
-          <button key={`react-emojis-docs-${id}`} className="react-emojis-docs__item">
-            <div className="react-emojis-docs__item__emoji">
-              <Emoji emoji={nameUrl} size={emojiSize}/>
-            </div>
-            <div className="react-emojis-docs__item__name">
-              {nameUrl}
-            </div>
-          </button>
+          <ButtonItem
+            key={`btn-${id}`}
+            id={id}
+            emoji={nameUrl}
+            size={emojiSize}
+            clipboardData={emoji}
+          />
         )
       }
     }
@@ -48,30 +49,30 @@ class App extends Component {
   render () {
     return (
       <div className="app">
-          <div className="react-emojis-docs">
-            <div className="header">
-              <div className="header__content">
-                <h1>react-emojis</h1>
-                <Emoji emoji="rocket"/>
-                <Emoji emoji="hamster"/>
-                <Emoji emoji="party-popper"/>
-                <h2>Render scalable emojis with proper accessibility markup</h2>
-                <Search
-                  placeholder="Filter emoji list"
-                  value={this.state.searchString}
-                  onChangeHandler={
-                    (value) => {
-                      console.log(value)
-                      this.setState({
-                        searchString: value
-                      })
-                    }
+        <div className="react-emojis-docs">
+          <div className="header">
+            <div className="header__content">
+              <h1>react-emojis</h1>
+              <Emoji emoji="rocket"/>
+              <Emoji emoji="hamster"/>
+              <Emoji emoji="party-popper"/>
+              <h2>Render scalable emojis with proper accessibility markup</h2>
+              <Search
+                placeholder="Filter emoji list"
+                value={this.state.searchString}
+                onChangeHandler={
+                  (value) => {
+                    this.setState({
+                      searchString: value
+                    })
                   }
-                />
-              </div>
+                }
+              />
+              <p>Copy emoji to clipboard by clicking on the one you choose! <Emoji emoji="clipboard"/></p>
             </div>
-            {this.renderEmojiDocumentation(emojis)}
           </div>
+          {this.renderEmojiDocumentation(emojis)}
+        </div>
       </div>
     );
   }
