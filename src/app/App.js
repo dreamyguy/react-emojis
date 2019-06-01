@@ -7,6 +7,7 @@ import emojis from './components/EmojiData';
 import ButtonItem from './components/ButtonItem';
 import Dropdown from './components/Dropdown';
 import Emoji from './components/Emoji';
+import GithubCorner from './components/GithubCorner';
 import Search from './components/Search';
 
 // Import utils
@@ -65,6 +66,7 @@ class App extends Component {
     } = this.state;
     return (
       <div className="app">
+        <GithubCorner href="https://github.com/dreamyguy/react-emojis"/>
         <div className="react-emojis-docs">
           <div className="header">
             <div className="header__content">
