@@ -5,6 +5,7 @@ import emojis from './components/EmojiData';
 
 // Import components
 import ButtonItem from './components/ButtonItem';
+import Dropdown from './components/Dropdown';
 import Emoji from './components/Emoji';
 import Search from './components/Search';
 
@@ -14,32 +15,43 @@ import containsString from '../utils/containsStringUtil';
 // Import styles
 import './App.scss';
 
+const options = [
+  { value: 'emoji', title: 'emoji' },
+  { value: 'markup', title: 'accessible emoji markup' },
+  { value: 'reactEmojis', title: '"Emoji" component from "react-emojis"' },
+  { value: 'nameUrl', title: 'emoji name (the reference used by "react-emojis")' },
+  { value: 'name', title: 'emoji name (CLDR formatting)' },
+  { value: 'code', title: 'unicode' },
+  { value: 'id', title: 'id' },
+];
+
 class App extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      searchString: ''
+      searchString: '',
+      copyMode: 'emoji',
+      selectedCopyModeIndex: 0,
     }
   }
-  renderEmojiDocumentation = (emojisArray, emojiSize) => {
+  renderEmojiDocumentation (emojisArray, emojiSize) {
     const theEmojis = [];
     for (let e in emojisArray) {
       const {
         id = '',
         nameUrl = '',
-        emoji = '',
       } = emojisArray[e];
       const {
-        searchString
+        copyMode,
+        searchString,
       } = this.state;
       if (containsString(nameUrl, searchString)) {
         theEmojis.push(
           <ButtonItem
             key={`btn-${id}`}
-            id={id}
-            emoji={nameUrl}
+            emojiObj={emojisArray[e]}
             size={emojiSize}
-            clipboardData={emoji}
+            copyMode={copyMode}
           />
         )
       }
@@ -47,6 +59,10 @@ class App extends Component {
     return theEmojis
   }
   render () {
+    const {
+      searchString,
+      selectedCopyModeIndex,
+    } = this.state;
     return (
       <div className="app">
         <div className="react-emojis-docs">
@@ -59,7 +75,7 @@ class App extends Component {
               <h2>Render scalable emojis with proper accessibility markup</h2>
               <Search
                 placeholder="Filter emoji list"
-                value={this.state.searchString}
+                value={searchString}
                 onChangeHandler={
                   (value) => {
                     this.setState({
@@ -68,7 +84,20 @@ class App extends Component {
                   }
                 }
               />
-              <p>Copy emoji to clipboard by clicking on the one you choose! <Emoji emoji="clipboard"/></p>
+              <p>Choose what to copy to clipboard when clicking on the one you choose: <Emoji emoji="clipboard"/></p>
+              <div className="dropdown-wrapper">
+                <Dropdown
+                  name="chooseCopyToClipboardMode"
+                  selectedvalue={selectedCopyModeIndex}
+                  options={options}
+                  onChange={(e) => {
+                    this.setState({
+                      selectedCopyModeIndex: e.target.value,
+                      copyMode: options[e.target.value].value
+                    });
+                  }}
+                />
+              </div>
             </div>
           </div>
           {this.renderEmojiDocumentation(emojis)}

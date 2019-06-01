@@ -18,12 +18,48 @@ class ButtonItem extends Component {
       copiedToClipboardStatus: false
     }
   }
+  getValueToClipboard () {
+    let theClipboard = '';
+    const {
+      copyMode = '',
+      emojiObj: {
+        emoji = '',
+        code = '',
+        id = '',
+        name = '',
+        nameUrl = '',
+      } = {}
+    } = this.props;
+    if (copyMode === 'emoji') {
+      theClipboard = emoji;
+    }
+    if (copyMode === 'code') {
+      theClipboard = code;
+    }
+    if (copyMode === 'id') {
+      theClipboard = id;
+    }
+    if (copyMode === 'markup') {
+      theClipboard = `<span role="img" aria-label="${name}" class="react-emojis" style="line-height: 1">${emoji}</span>`;
+    }
+    if (copyMode === 'name') {
+      theClipboard = name;
+    }
+    if (copyMode === 'nameUrl') {
+      theClipboard = nameUrl;
+    }
+    if (copyMode === 'reactEmojis') {
+      theClipboard = `<Emoji emoji="${nameUrl}"/>`;
+    }
+    return theClipboard;
+  }
   render () {
     const {
       classes = '',
-      clipboardData = '',
-      emoji = '',
-      id = '',
+      emojiObj: {
+        id = '',
+        nameUrl = '',
+      } = {},
       size = '',
     } = this.props;
     const {
@@ -34,9 +70,9 @@ class ButtonItem extends Component {
         key={`react-emojis-docs-${id}`}
         className={`react-emojis-docs__item${classes ? ' ' + classes : ''}${copiedToClipboardStatus ? ' disabled' : ''}`}
         onClick = {() => {
-          copyToClipboard(clipboardData);
+          copyToClipboard(this.getValueToClipboard());
           this.setState({
-            clipboard: clipboardData,
+            clipboard: this.getValueToClipboard(),
             copiedToClipboardStatus: true
           });
           setTimeout(() => {
@@ -48,10 +84,10 @@ class ButtonItem extends Component {
         disabled={copiedToClipboardStatus}
       >
         <div className="react-emojis-docs__item__emoji">
-          <Emoji emoji={emoji} size={size}/>
+          <Emoji emoji={nameUrl} size={size}/>
         </div>
         <div className="react-emojis-docs__item__name">
-          {copiedToClipboardStatus ? 'copied!' : emoji}
+          {copiedToClipboardStatus ? 'copied!' : nameUrl}
         </div>
       </button>
     )
@@ -60,9 +96,7 @@ class ButtonItem extends Component {
 
 Emoji.propTypes = {
   classes: PropTypes.string,
-  clipboardData: PropTypes.string,
-  emoji: PropTypes.string.isRequired,
-  id: PropTypes.string,
+  emojiObj: PropTypes.object,
   size: PropTypes.string,
 };
 
