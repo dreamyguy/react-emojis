@@ -17,7 +17,7 @@ Use **react-emojis** to output the recommended markup for accessible emojis:
 <span role="img" aria-label="woman dancing" class="react-emojis" style="line-height: 1;">💃</span>
 ```
 
-## The emojis :tada: :baloon: :unicorn:
+## The emojis :tada: :balloon: :unicorn:
 
 Instead of maintaining a list of _emojis_ on this README, I decided it would be best to create a living github page, that would serve both as a way of showcase the _emojis_, the **Emoji** component and facilitate their use:
 
@@ -93,7 +93,7 @@ This command compiles all production-optimised resources to a folder called **bu
 
 [MIT](LICENSE)
 
-## About
+# About
 
 **react-emojis** was conceived and developed by [Wallace Sidhrée][1]. is written in [React][4]. It was initialized through [create-react-app 2][6] and built upon that with some sensible strategies. [Jest][7] is used for tests. [VS Code][12] was used as the IDE of choice.
 
