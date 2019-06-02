@@ -1,14 +1,16 @@
 {
   "name": "react-emojis",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": false,
-  "description": "Render all current emojis with proper accessibility markup, on any size",
+  "description": "Render scalable emojis with proper accessibility markup",
   "keywords": [
     "emoji",
     "emojis",
     "react emojis",
     "emojis for react",
-    "emojis in react"
+    "emojis in react",
+    "accessibility emoji",
+    "accessible emojis"
   ],
   "homepage": "https://dreamyguy.github.io/react-emojis/",
   "repository": {
