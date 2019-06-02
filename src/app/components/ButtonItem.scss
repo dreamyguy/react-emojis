@@ -80,9 +80,6 @@
       background-color: lightgray;
       cursor: pointer;
     }
-    &:focus {
-      outline-color: purple;
-    }
     &.disabled {
       background-color: green;
       cursor: initial;

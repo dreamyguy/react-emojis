@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+// Avoid 'zoom' in iOS on the following elements
+input[type='text'],
+input[type='number'],
+select,
+select:focus,
+textarea {
+  font-size: 16px;
+}
+
+*:focus {
+  outline: 2px solid #e46119;
+}

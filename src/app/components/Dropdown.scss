@@ -26,12 +26,15 @@
   border: 1px solid #222;
   padding: 10px 35px 10px 10px;
   width: 100%;
-  font-size: 13px;
   color: #222;
   background-color: white;
   border-radius: 0;
   width: 100%;
   line-height: 1.2;
+  font-size: 16px; // Avoid 'zoom' on iOS devices
+  &:focus {
+    font-size: 16px; // Avoid 'zoom' on iOS devices
+  }
 }
 
 .dropdown__icon {
