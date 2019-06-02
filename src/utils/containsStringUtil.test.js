@@ -26,6 +26,16 @@ describe('containsString', () => {
     const substring = 'ing-wo';
     expect(containsString(string, substring)).toEqual(true);
   })
+  it('should return true when checking "dancing" against "DanCinG"', () => {
+    const string = 'DanCinG';
+    const substring = 'dancing';
+    expect(containsString(string, substring)).toEqual(true);
+  })
+  it('should return true when checking "DanCinG" against "dancing"', () => {
+    const string = 'dancing';
+    const substring = 'DanCinG';
+    expect(containsString(string, substring)).toEqual(true);
+  })
   it('should return false when checking "ee" against "foo"', () => {
     const string = 'foo';
     const substring = 'ee';
