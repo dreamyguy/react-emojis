@@ -21,6 +21,21 @@ textarea {
   font-size: 16px;
 }
 
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+  // Remove inner shadow from form elements in iOS
+  -webkit-appearance: none;
+  // Remove rounded borders on iOS
+  border-radius: 0;
+}
+
+// Hide clear button on IE11 as we've implemented a global solution with SVG as background
+::-ms-clear {
+  display: none;
+}
+
 *:focus {
   outline: 2px solid #e46119;
 }
