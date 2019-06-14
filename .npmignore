@@ -10,10 +10,19 @@
 
 # production
 /build
-/lib
+/bin
+/public
+
+# documentation
+/docs
 
 # development mode
+.babelrc
+.env
 .env.*
+/src
+TODO.md
+webpack.config.*
 
 # misc
 .DS_Store
