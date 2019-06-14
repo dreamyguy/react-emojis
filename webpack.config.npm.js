@@ -17,7 +17,17 @@ module.exports = {
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'lib'),
-    libraryTarget: 'commonjs2'
+    library: 'Emoji',
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
+    libraryExport: 'default'
+  },
+  externals: {
+    react: {
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'react'
+    }
   },
   mode: 'production'
 };
