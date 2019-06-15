@@ -1,6 +1,6 @@
 {
   "name": "react-emojis",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": false,
   "description": "Render scalable emojis with proper accessibility markup",
   "keywords": [

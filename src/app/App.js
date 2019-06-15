@@ -9,6 +9,7 @@ import Dropdown from './components/Dropdown';
 import Emoji from './components/Emoji';
 import GithubCorner from './components/GithubCorner';
 import Search from './components/Search';
+import Footer from './components/Footer';
 
 // Import utils
 import containsString from '../utils/containsStringUtil';
@@ -95,44 +96,47 @@ class App extends Component {
       selectedCopyModeIndex,
     } = this.state;
     return (
-      <div className={`app${max ? ' max' : ''}`}>
-        <GithubCorner href="https://github.com/dreamyguy/react-emojis"/>
-        <div className="react-emojis-docs">
-          <div className="header">
-            <div className="header__content">
-              <h1><Emoji emoji="unicorn"/>&nbsp;&nbsp;react-emojis&nbsp;&nbsp;<Emoji emoji="party-popper"/></h1>
-              {this.renderViewModeButton()}
-              <h2>Render scalable emojis with proper accessibility markup</h2>
-              <Search
-                placeholder="Filter emoji list"
-                value={searchString}
-                onChangeHandler={
-                  (value) => {
-                    this.setState({
-                      searchString: value
-                    })
+      <>
+        <div className={`app${max ? ' max' : ''}`}>
+          <GithubCorner href="https://github.com/dreamyguy/react-emojis"/>
+          <div className="react-emojis-docs">
+            <div className="header">
+              <div className="header__content">
+                <h1><Emoji emoji="unicorn"/>&nbsp;&nbsp;react-emojis&nbsp;&nbsp;<Emoji emoji="party-popper"/></h1>
+                {this.renderViewModeButton()}
+                <h2>Render scalable emojis with proper accessibility markup</h2>
+                <Search
+                  placeholder="Filter emoji list"
+                  value={searchString}
+                  onChangeHandler={
+                    (value) => {
+                      this.setState({
+                        searchString: value
+                      })
+                    }
                   }
-                }
-              />
-              <p>Choose what to copy to clipboard when clicking on the one you choose: <Emoji emoji="clipboard"/></p>
-              <div className="dropdown-wrapper">
-                <Dropdown
-                  name="chooseCopyToClipboardMode"
-                  selectedvalue={selectedCopyModeIndex}
-                  options={options}
-                  onChange={(e) => {
-                    this.setState({
-                      selectedCopyModeIndex: e.target.value,
-                      copyMode: options[e.target.value].value
-                    });
-                  }}
                 />
+                <p>Choose what to copy to clipboard when clicking on the one you choose: <Emoji emoji="clipboard"/></p>
+                <div className="dropdown-wrapper">
+                  <Dropdown
+                    name="chooseCopyToClipboardMode"
+                    selectedvalue={selectedCopyModeIndex}
+                    options={options}
+                    onChange={(e) => {
+                      this.setState({
+                        selectedCopyModeIndex: e.target.value,
+                        copyMode: options[e.target.value].value
+                      });
+                    }}
+                  />
+                </div>
               </div>
             </div>
+            {this.renderEmojiDocumentation(emojis)}
           </div>
-          {this.renderEmojiDocumentation(emojis)}
         </div>
-      </div>
+        <Footer/>
+      </>
     );
   }
 }

@@ -1,29 +1,6 @@
 .app {
   color: black;
 }
-.header {
-  width: 100%;
-  &__content {
-    box-sizing: border-box;
-    padding: 20px;
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-    h1,
-    h2 {
-      margin: 15px 0;
-    }
-    h1 {
-      margin-top: 0;
-    }
-    h2 {
-      font-size: 18px;
-    }
-    p:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
 .dropdown-wrapper {
   max-width: 300px;
   margin: 0 auto;

@@ -36,9 +36,26 @@ On this page you can:
     - **code**: Emoji's Unicode.
     - **id**: The emoji's id, as set by unicode.org.
 
+## Line-height
+
+**The emoji will get `line-height: 1` by default**. You can override that behavior by:
+
+- Setting a custom `line-height` to the class `react-emojis`, which the markup output provides out of the box.
+- Passing a `lineHeight` _prop_ to the component.
+
+The latter can be done as follows:
+
+```javascript
+<Emoji emoji="woman-dancing" lineHeight="inherit"/>
+```
+
+This will give the emoji the `line-height` _from its parent_.
+
+> One could also pass any valid value to it, as `1.2`, `20px`, etc. There's no validity check here so make sure you pass a valid value.
+
 ## Scaling
 
-**The emoji will inherit the font size set by the parent element**. However, you can override that behavior by doing the following:
+**The emoji will inherit the font size set by the parent element**. You can override that behavior by:
 
 - Setting a `font-size` to the class `react-emojis`, which the markup output provides out of the box.
 - Passing a `size` _prop_ to the component.
@@ -63,7 +80,21 @@ The [emoji list](https://github.com/dreamyguy/react-emojis/blob/master/src/app/c
 
     npm i react-emojis --save
 
-More documentation coming soon!
+As with any node module, first you'll have to import it with `require`:
+
+```javascript
+var Emoji = require('react-emojis');
+```
+
+...but in a modern **React** implementation you'll be using `import`:
+
+```javascript
+import Emoji from 'react-emojis';
+```
+
+_**A note on size**. With **1719** emoji definitions, this package is by no means small..._
+
+> `react-emojis` only worked properly as a `npm` from version `v1.0.4`. If you're reading this it's no longer a problem. :tada:
 
 # Development
 
@@ -79,7 +110,7 @@ To start the app locally, run:
 
     npm run start
 
-This command fires up the application on port `9900`, making it visible on http://localhost:9900. Because this app is based on [create-react-app][3], the port number should be configured on the [.env](https://github.com/dreamyguy/react-emojis/blob/master/.env#L1) file.
+This command fires up the application on port `9900`, making it visible on http://localhost:9900. Because this app is based on [create-react-app][2], the port number should be configured on the [.env](https://github.com/dreamyguy/react-emojis/blob/master/.env#L1) file.
 
 ## Building the frontend for Production
 
@@ -95,17 +126,7 @@ This command compiles all production-optimised resources to a folder called **bu
 
 # About
 
-**react-emojis** was conceived and developed by [Wallace Sidhrée][1]. is written in [React][4]. It was initialized through [create-react-app 2][6] and built upon that with some sensible strategies. [Jest][7] is used for tests. [VS Code][12] was used as the IDE of choice.
+**react-emojis** was put together by [Wallace Sidhrée][1]. 👨‍💻🇳🇴
 
   [1]: http://sidhree.com/
-  [2]: https://nodejs.org/
-  [3]: https://github.com/creationix/nvm
-  [4]: https://reactjs.org/
-  [5]: https://redux.js.org/
-  [6]: https://facebook.github.io/create-react-app/
-  [7]: https://facebook.github.io/jest/
-  [8]: https://facebook.github.io/watchman/
-  [9]: https://airbnb.io/enzyme/
-  [10]: https://momentjs.com/
-  [11]: https://brew.sh/
-  [12]: https://code.visualstudio.com/
+  [2]: https://facebook.github.io/create-react-app/

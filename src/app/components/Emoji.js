@@ -20,8 +20,9 @@ const allEmojiNames = emojis => {
   return names;
 }
 
-const renderEmoji = (emojiName, emojiSize) => {
+const renderEmoji = ({emojiName, emojiSize, lineHeight}) => {
   const theEmoji = [];
+  const theLineHeight = lineHeight ? { lineHeight } : { lineHeight: '1' };
   for (let e in emojis) {
     const {
       id = '',
@@ -29,7 +30,7 @@ const renderEmoji = (emojiName, emojiSize) => {
       name = '',
       nameUrl = '',
     } = emojis[e];
-    const styles = emojiSize ? { fontSize: `${emojiSize}px`, lineHeight: '1' } : { lineHeight: '1' };
+    const styles = emojiSize ? { fontSize: `${emojiSize}px`, ...theLineHeight } : { ...theLineHeight };
     // TODO: don't loop until we find a match, find a match faster
     if (emojiName === nameUrl) {
       theEmoji.push(
@@ -58,13 +59,15 @@ const Emoji = props => {
   const {
     emoji = '',
     size = '',
+    lineHeight = '',
   } = props;
-  return renderEmoji(emoji, size);
+  return renderEmoji({ emojiName: emoji, emojiSize: size, lineHeight });
 }
 
 Emoji.propTypes = {
   emoji: PropTypes.oneOf(allEmojiNames(emojis)),
   size: PropTypes.string,
+  lineHeight: PropTypes.string,
 };
 
 export default Emoji;
