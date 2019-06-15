@@ -1,3 +1,5 @@
+![Moments](https://raw.githubusercontent.com/dreamyguy/react-emojis/master/docs/react-emojis-logo-github-full-width.png "Render scalable emojis with proper accessibility markup")
+
 # react-emojis
 
 > :rocket: :hamster: :tada: Render all current emojis with proper accessibility markup, on any size
