@@ -1,6 +1,6 @@
 {
   "name": "react-emojis",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "description": "Render scalable emojis with proper accessibility markup",
   "keywords": [
@@ -18,7 +18,6 @@
     "url": "https://github.com/dreamyguy/react-emojis"
   },
   "main": "lib/index.js",
-  "module": "lib/index.es.js",
   "author": {
     "name": "Wallace Sidhrée",
     "email": "i@dreamyguy.com",
@@ -38,7 +37,7 @@
     "prebuild": "echo 🚀  Runnin 'build', hang tight!",
     "build": "react-scripts build",
     "postbuild": "echo 🎉 'build' was completed",
-    "prebuild-npm": "echo 🏎  Runnin 'build', hang tight! && ./bin/preBuildNpm.sh",
+    "prebuild-npm": "echo 🏎  Runnin 'build', hang tight!",
     "build-npm": "NODE_ENV=npm webpack --config webpack.config.npm.js",
     "postbuild-npm": "echo 🎈 'build-npm' was completed",
     "test": "react-scripts test",

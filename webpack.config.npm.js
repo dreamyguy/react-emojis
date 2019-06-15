@@ -18,16 +18,10 @@ module.exports = {
     filename: 'index.js',
     path: path.resolve(__dirname, 'lib'),
     library: 'Emoji',
-    libraryTarget: 'umd',
-    umdNamedDefine: true,
-    libraryExport: 'default'
+    libraryTarget: 'commonjs2'
   },
   externals: {
-    react: {
-      commonjs: 'react',
-      commonjs2: 'react',
-      amd: 'react'
-    }
+    react: 'commonjs react'
   },
   mode: 'production'
 };
