@@ -1,6 +1,6 @@
 {
   "name": "react-emojis",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "description": "Render scalable emojis with proper accessibility markup",
   "keywords": [
@@ -17,7 +17,8 @@
     "type": "git",
     "url": "https://github.com/dreamyguy/react-emojis"
   },
-  "main": "lib/index.js",
+  "main": "lib/index",
+  "typings": "dist/index",
   "author": {
     "name": "Wallace Sidhrée",
     "email": "i@dreamyguy.com",
@@ -25,12 +26,20 @@
   },
   "copyright": "Copyright (c) Wallace Sidhrée - All rights reserved.",
   "license": "MIT",
-  "dependencies": {
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
     "gh-pages": "^2.0.1",
     "node-sass": "^4.12.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -61,13 +70,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.6",
-    "webpack": "^4.34.0",
-    "webpack-cli": "^3.3.4"
   }
 }
