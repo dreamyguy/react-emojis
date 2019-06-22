@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-emojis/static/css/main.e5a92513.chunk.css",
-    "main.js": "/react-emojis/static/js/main.1b931699.chunk.js",
-    "main.js.map": "/react-emojis/static/js/main.1b931699.chunk.js.map",
+    "main.css": "/react-emojis/static/css/main.a3b9539d.chunk.css",
+    "main.js": "/react-emojis/static/js/main.352fef1b.chunk.js",
+    "main.js.map": "/react-emojis/static/js/main.352fef1b.chunk.js.map",
     "runtime~main.js": "/react-emojis/static/js/runtime~main.0ebe51d8.js",
     "runtime~main.js.map": "/react-emojis/static/js/runtime~main.0ebe51d8.js.map",
-    "static/js/2.4f0ec8b6.chunk.js": "/react-emojis/static/js/2.4f0ec8b6.chunk.js",
-    "static/js/2.4f0ec8b6.chunk.js.map": "/react-emojis/static/js/2.4f0ec8b6.chunk.js.map",
+    "static/js/2.3d74e13f.chunk.js": "/react-emojis/static/js/2.3d74e13f.chunk.js",
+    "static/js/2.3d74e13f.chunk.js.map": "/react-emojis/static/js/2.3d74e13f.chunk.js.map",
     "index.html": "/react-emojis/index.html",
-    "precache-manifest.821c1c691ae2488e9351b068b00a3db5.js": "/react-emojis/precache-manifest.821c1c691ae2488e9351b068b00a3db5.js",
+    "precache-manifest.4f7465d6562a88e568641e72bead4d61.js": "/react-emojis/precache-manifest.4f7465d6562a88e568641e72bead4d61.js",
     "service-worker.js": "/react-emojis/service-worker.js",
-    "static/css/main.e5a92513.chunk.css.map": "/react-emojis/static/css/main.e5a92513.chunk.css.map"
+    "static/css/main.a3b9539d.chunk.css.map": "/react-emojis/static/css/main.a3b9539d.chunk.css.map"
   }
 }
