@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ForkMeOnGithub from 'fork-me-on-github';
 
 // Import data
 import emojis from './components/EmojiData';
@@ -7,7 +8,6 @@ import emojis from './components/EmojiData';
 import ButtonItem from './components/ButtonItem';
 import Dropdown from './components/Dropdown';
 import Emoji from './components/Emoji';
-import GithubCorner from './components/GithubCorner';
 import Search from './components/Search';
 import Footer from './components/Footer';
 
@@ -98,7 +98,7 @@ class App extends Component {
     return (
       <>
         <div className={`app${max ? ' max' : ''}`}>
-          <GithubCorner href="https://github.com/dreamyguy/react-emojis"/>
+          <ForkMeOnGithub repo="https://github.com/dreamyguy/react-emojis" isPride/>
           <div className="react-emojis-docs">
             <div className="header">
               <div className="header__content">
